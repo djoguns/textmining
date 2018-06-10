@@ -1,9 +1,10 @@
 # Extracting Text from pdf - files collection
 
-load.lib <- c("pdftools", "magrittr", "dplyr", "lubridate", "twitteR", "plotly", "tm", "wordcloud", "syuzhet", "streamR", "RCurl", "RJSONIO", "stringr", "rjson", "ROAuth", "ggplot2", "ggthemes", "Amelia", "plyr", "bit64")
-install.lib <- load.lib[!load.lib %in% installed.packages()]
-for(lib in install.lib) install.packages(lib,dependences=TRUE)
-sapply(load.lib,require,character=TRUE)
+# Install Packages where required
+# load.lib <- c("pdftools", "magrittr", "dplyr", "lubridate", "twitteR", "plotly", "tm", "wordcloud", "syuzhet", "streamR", "RCurl", "RJSONIO", "stringr", "rjson", "ROAuth", "ggplot2", "ggthemes", "Amelia", "plyr", "bit64")
+# install.lib <- load.lib[!load.lib %in% installed.packages()]
+# for(lib in install.lib) install.packages(lib,dependences=TRUE)
+# sapply(load.lib,require,character=TRUE)
 
 library(pdftools)
 library(magrittr) # The infix operator %>% is not part of base R, but it is defined by the package magrittr...
@@ -35,4 +36,6 @@ for (i in 1:length(pdf_list)){
 }
 
 corpus_raw %>% head()
+
+corpus_raw %>% tail()
 
